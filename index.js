@@ -3,12 +3,21 @@ var fs = require('fs')
 function readTheBible () {
 	var bbl = fs.readFileSync('kjv-1769.txt','utf8')
 	var array = bbl.split('\n')
-	var result = "";
+	var tiredBible = []
 	for(var i = 0; i < array.length; i++){
 		var ll = array[i]
-		if(isTired(ll)){result += " " + ll}
+		if(ll.includes("BOOK:")){
+			tiredBible.push(
+				{
+					name: ll.split(':')[1],
+					verses : []
+				}
+			)
+		} else if(isTired(ll)){
+			tiredBible[tiredBible.length-1].verses.push(ll)
+		}
 	}
-	fs.writeFileSync("sleep.txt",result);
+	return tiredBible
 }
 
 function isTired(ss) {
@@ -44,4 +53,9 @@ function isTired(ss) {
 	return tiredWords.some(includesTiredWord)
 }
 
-readTheBible();
+function test(){
+	var tiredBible = readTheBible();
+	tiredBible.forEach(book => {console.log(book.name)})
+}
+
+test()
