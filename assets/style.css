@@ -1,0 +1,22 @@
+.louis {
+  appearance: 'handsome';
+}
+:root {
+  --primary: #ff4136;
+}
+
+body {
+}
+
+h1 {
+  font-family: serif;
+  font-size: 45pt;
+  letter-spacing: 1.4px;
+}
+
+article {
+  font-family: sans-serif;
+  line-height: 1.5;
+  max-width: 800px;
+  padding: 50px;
+}
