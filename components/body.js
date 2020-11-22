@@ -2,8 +2,10 @@ module.exports = body
 
 function body (site) {
   return `
-  <body class="">
-    ${site.bible.map(bbb => book(bbb)).join('')}
+  <body class="body">
+    <main class="content">
+      ${site.bible.map(bbb => book(bbb)).join('')}
+    </main>
   </body>
   `
 }

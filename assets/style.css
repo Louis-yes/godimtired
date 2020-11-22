@@ -20,3 +20,12 @@ article {
   max-width: 800px;
   padding: 50px;
 }
+
+
+.📖-root article {
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-size: 8pt;
+  max-width: 800px;
+  padding: 10px 40px;
+}

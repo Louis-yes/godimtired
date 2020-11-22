@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>God, I am tired</title>
+  <script type="text/javascript" src="https://unpkg.com/bindery"></script>
+
+  <link rel="stylesheet" href="assets/tachyons.min.css"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+
+</body>
+<script>
+      const {
+        makeBook,
+        createRule,
+        PageBreak,
+        FullBleedPage,
+        FullBleedSpread,
+        PageReference,
+        RunningHeader,
+        Footnote,
+        Paper,
+        Layout,
+        Marks,
+      } = Bindery;
+
+      const cleanedURL = (url) => {
+        let clean = url;
+        if (url[url.length - 1] === '/') {
+          clean = url.substr(0, url.length - 1);
+        }
+        clean = clean.replace('http://', '').replace('https://', '')
+        return clean;
+      }
+
+      makeBook({
+        content: {
+          url: 'index.html',
+          selector: ".content",
+        },
+        printSetup: {
+          paper: Paper.AUTO_BLEED,
+        },
+        pageSetup: {
+        },
+        rules: [
+          PageBreak({
+            selector: '.book',
+            position: 'before',
+          })
+        ]
+      });
+      </script>
+</html>
