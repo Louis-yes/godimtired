@@ -8,7 +8,7 @@
 body {
 }
 
-h1 {
+.name {
   font-family: serif;
   font-size: 45pt;
   letter-spacing: 1.4px;
@@ -21,6 +21,32 @@ article {
   padding: 50px;
 }
 
+.godimtired {
+  font-family: serif;
+  font-size: 84pt;
+  letter-spacing: 1.4px;
+  white-space: pre-line;
+  color: #fff;
+  text-shadow: -1px -1px 0 #111, 1px -1px 0 #000, -1px 1px 0 #111, 1px 1px 0 #111;
+}
+
+.notes-list {
+  padding: 0;
+}
+
+.notes-list .word {
+  display: inline-block;
+  padding: 2px 2px;
+}
+
+.notes-list .word:after {
+  content: ',';
+}
+
+.notes-list .word:last-of-type:after {
+  content: '';
+}
+
 
 .📖-root article {
   font-family: sans-serif;
@@ -28,4 +54,8 @@ article {
   font-size: 8pt;
   max-width: 800px;
   padding: 10px 40px;
+}
+
+📖-root .name {
+  font-size: 24pt;
 }

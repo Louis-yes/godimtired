@@ -46,7 +46,8 @@ function readTheBible () {
 			tiredBible[tiredBible.length-1].verses.push(ll)
 		}
 	}
-	return tiredBible
+
+	return {words: tiredWords, books: tiredBible}
 }
 
 function isTired(ss) {

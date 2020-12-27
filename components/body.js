@@ -4,9 +4,25 @@ function body (site) {
   return `
   <body class="body">
     <main class="content">
-      ${site.bible.map(bbb => book(bbb)).join('')}
+      ${header(site)}
+      ${site.bible.books.map(bbb => book(bbb)).join('')}
     </main>
   </body>
+  `
+}
+
+function header(site) {
+  return `
+  <header class="title page">
+    <article class="title-page">
+      <h1 class="title godimtired">${site.title.split(',').join(',\n').trim()}</h1>
+    </article>
+    <article class="notes words">
+        <ul class="list notes-list">
+          ${site.bible.words.map(w=>{return `<li class="word">${w}</li>`}).join('')}
+        </ul>
+    </article>
+  </header>
   `
 }
 
